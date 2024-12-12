@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Story Time:</title>
+</head>
+<script>
+    function sub() {
+        console.log('sub function');
+        $("#options_list").submit();
+    }
+</script>
+<body>
+    <h1>Story</h1>
+    <p>{{text}}</p>
+    <br>
+    <p>{{option_a}}</p>
+    <p>{{option_b}}</p>
+    <p>{{option_c}}</p>
+    
+    <form id="options_list">
+        <select name="options" id="options">
+            <!-- onchange="setLanguage(this)" -->
+            <option name="A" value="A">A</option>
+            <option name="A" value="B">B</option>
+            <option name="A" value="C">C</option>
+            <a href="./index.html"><option value="Exit">Exit</option></a>
+        </select>
+        <button type="submit" onClick='sub()'>Submit &raquo;</button>
+    </form>
+</body>
+</html>
