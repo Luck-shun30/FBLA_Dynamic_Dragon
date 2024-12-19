@@ -2,31 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Story Time:</title>
+    <title>Dynamic Unicorn - Story Time</title>
 </head>
 <script>
     function sub() {
-        console.log('sub function');
-        $("#options_list").submit();
+        document.getElementById("options_list").submit();
+    }
+    function read_aloud() {
+        console.log(document.getElementById("story").value)
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = document.getElementById("story").value;
+        window.speechSynthesis.speak(msg);
+        window.speechSynthesis.cancel();
+    }
+    function pause_reading() {
+        window.speechSynthesis.pause();
+    }
+    function resume_reading() {
+        window.speechSynthesis.resume();
+    }
+    function restart_reading() {
+        window.speechSynthesis.cancel();
+        console.log(document.getElementById("story").value)
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = document.getElementById("story").value;
+        window.speechSynthesis.speak(msg);
     }
 </script>
 <body>
     <h1>Story</h1>
-    <p>{{text}}</p>
+    <textarea id="story" readonly>{{text}}</textarea>
     <br>
     <p>{{option_a}}</p>
     <p>{{option_b}}</p>
     <p>{{option_c}}</p>
     
-    <form id="options_list">
-        <select name="options" id="options">
-            <!-- onchange="setLanguage(this)" -->
-            <option name="A" value="A">A</option>
-            <option name="A" value="B">B</option>
-            <option name="A" value="C">C</option>
-            <a href="./index.html"><option value="Exit">Exit</option></a>
+    <form id="options_list" method="POST">
+        <select name="options" id="options" onchange='sub()'>
+            <option selected disabled hidden value="None">Select</option>
+            <option value="{{option_a}}">A</option>
+            <option value="{{option_b}}">B</option>
+            <option value="{{option_c}}">C</option>
+            <option value="Exit">Exit</option> <!--Exit doesnt work cuz index doesnt exist-->
         </select>
-        <button type="submit" onClick='sub()'>Submit &raquo;</button>
     </form>
+    <button onclick="read_aloud()">Read Aloud</button>
+    <button onclick="pause_reading()">Pause Reading</button>
+    <button onclick="resume_reading()">Resume Reading</button>
+    <button onclick="restart_reading()">Restart Reading</button>
 </body>
 </html>

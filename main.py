@@ -1,20 +1,29 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 from ollama import chat
 from ollama import ChatResponse
 
 #options aren't shown in the ai request so resulting story is random. add global var for the options available and add that to prompt.
 active_story = ""
-choice = "A"
+choice = ""
+options = []
+option_a = ""
+option_b = ""
+option_c = ""
+
 def llmgenerate():
    SYSTEM_PROMPT = 'Continue the fantasy story without adding anything else. Do not end the story.'
    global choice
    global active_story
-
+   global options
+   global option_a
+   global option_b
+   global option_c
+   print(choice)
    response = ChatResponse = chat(model='llama3.2', messages=[
    {
-      'role': 'user',
-      'content': "System Prompt:" + SYSTEM_PROMPT + "\nConversation history / Story that you need to continue: " + active_story + "\nChosen option: " + choice + "\nContinue the story by adding on to it (return the new story as an addition)"
+      'role': 'user',                                                                                                               #TODO: Options cause it to give new options instead of reading them. Take the list of options out so that only the chosen choice is listed for it to continue.
+      'content': "System Prompt:" + SYSTEM_PROMPT + "\nConversation history/Story that you need to continue: " + active_story + "\nChosen option (how the story should go): " + choice + "\nContinue the story by adding on to it based on the chosen option (return the new story as an addition)."
    }
    ])
 
@@ -54,17 +63,20 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-   return render_template('index.html')
+   return render_template('./index.html')
  
 @app.route('/generate', methods=['GET', 'POST'])
 def generate():
-   global choice
-   if request.method == 'POST':
-      choice = request.form['options']
-   story = llmgenerate()
-   options = options_generate()
-   return render_template('answer.html', 
+    global choice
+    if request.method == 'POST':
+        choice = request.form.get('options')
+        if choice == "Exit":
+            return redirect(url_for('index'))  # Redirect to an index route
+    story = llmgenerate()
+    options = options_generate()
+    return render_template('answer.html', 
                            text=story, option_a=options[0], option_b=options[1], option_c=options[2])
+
  
  
 # Start with flask web app with debug as
