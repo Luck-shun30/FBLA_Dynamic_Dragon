@@ -64,6 +64,10 @@ app = Flask(__name__)
 @app.route('/')
 def home():
    return render_template('./index.html')
+
+@app.route('/load')
+def load():
+   return render_template('./loading.html')
  
 @app.route('/generate', methods=['GET', 'POST'])
 def generate():
@@ -71,7 +75,7 @@ def generate():
     if request.method == 'POST':
         choice = request.form.get('options')
         if choice == "Exit":
-            return redirect(url_for('index'))  # Redirect to an index route
+            return redirect(url_for('/'))  # Redirect to an / route
     story = llmgenerate()
     options = options_generate()
     return render_template('answer.html', 

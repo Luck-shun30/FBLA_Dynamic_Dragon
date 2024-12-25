@@ -1,14 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <title>Dynamic Unicorn - Home</title>
-</head>
-<body>
-    <form>
-        <h1><i> Welcome to Dynamic Unicorn!</i></h1>
-        <a href="/generate">Hi</a>
-    </form>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
+    <title>Dynamic Dragon - Home</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/static/styles/styles.css">
+    
+    <!-- The website JavaScript file -->
+    <!-- <script src="/script.js" defer></script> -->
+  </head>
+  <body>
+    <div id="blob"></div>
+    <nav>
+      <div class="leftNav">
+        <div class="logoIMG">
+          <a href="/">
+            <img
+              src="https://cdn.glitch.global/13401054-3cb4-42ce-a2f4-c544422355d2/Coolify Logo.png?v=1734552065217"
+              alt="Dynamic Dragon Logo"
+              id="logo"
+            />
+          </a>
+        </div>
+        <h2 id="logoTxt">Dynamic Dragon</h2>
+      </div>
+
+      <ul>
+        <li>
+          <a
+            data-value="AI Playground"
+            class="active"
+            id="active"
+            href="/load"
+            >AI Playground</a
+          >
+        </li>
+        <li><a href="">Technology</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+    <header>
+      <img
+        class="bgImg"
+        src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/dragon_bg.jpg?v=1734914216963"
+      />
+      <h3 class="cardTitle">Your Story, Your Plot.</h3>
+      <a href="/load" id="tryNow" class="tryNow">Try Now</a>
+    </header>
+    <section class="aboutUs">
+      <h1>About Us</h1>
+      <div class="abtUsContainer">
+        <div class="aboutUsImg">
+          <img
+            src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/aboutUs.png?v=1734988018778"
+          />
+        </div>
+        <div class="aboutUsText">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section class="theTeam">
+      <h1>The Team</h1>
+      <div class="teamMembers">
+        <div class="lakshan profiles">
+          <img
+            src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/lakshan.jpg?v=1734989763281"
+            class="profilePic"
+          />
+          <p class="aboutMe">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
+          </p>
+        </div>
+        <div class="shankar profiles">
+          <img
+            src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/lp_image.jpeg?v=1734989851449"
+            class="profilePic"
+          />
+          <p class="aboutMe">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
+          </p>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section class="bts">
+      <h1>Behind the Screen</h1>
+      <div class="btsElems">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+        <div class="logoGrid">
+          <div class="logo">
+            <img
+              class="logos"
+              src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/images.png?v=1734990745111"
+            />
+          </div>
+          <div class="logo">
+            <img
+              class="logos"
+              src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/images-2.png?v=1734990738424"
+            />
+          </div>
+          <div class="logo">
+            <img
+              class="logos"
+              src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/images-3.png?v=1734990741685"
+            />
+          </div>
+          <div class="logo">
+            <img
+              class="logos"
+              src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/python-logo.png?v=1734990751463"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section class="contact">
+      <h1>Contact Us</h1>
+      <div class="contactContainer">
+        <div class="email">
+          <h4>Email:</h4>
+          <p>slakshan30@gmail.com</p>
+          <p>krishnamurthyshankar9@gmail.com</p>
+        </div>
+        <div class="phone">
+          <h4>Phone:</h4>
+          <p>+1 (630) 998-6671</p>
+          <p>+1 (919) 808-8526</p>
+        </div>
+        <div class="address">
+          <h4>Address:</h4>
+          <p>1 Stevenson Dr<br />Lincolnshire, IL 60069<br />United States</p>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18445247.590375826!2d0!3d-73.61021717358103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa4b9967b3390754b%3A0x6e52be1f740f2075!2sAntarctica!5e0!3m2!1sen!2sus!4v1734669698099!5m2!1sen!2sus"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
