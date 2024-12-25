@@ -10,7 +10,77 @@
     <link rel="stylesheet" href="/static/styles/styles.css">
     
     <!-- The website JavaScript file -->
-    <!-- <script src="/script.js" defer></script> -->
+    <script>
+      const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+      let interval = null;
+
+      document.getElementById("active").onmouseover = (event) => {
+        let iteration = 0;
+
+        clearInterval(interval);
+
+        interval = setInterval(() => {
+          event.target.innerText = event.target.innerText
+            .split("")
+            .map((letter, index) => {
+              if (index < iteration) {
+                return event.target.dataset.value[index];
+              }
+
+              return letters[Math.floor(Math.random() * 26)];
+            })
+            .join("");
+
+          if (iteration >= event.target.dataset.value.length) {
+            clearInterval(interval);
+          }
+
+          iteration += 1 / 5;
+        }, 1);
+      };
+
+      const blob = document.getElementById("blob");
+
+      document.addEventListener("mousemove", function (event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        // console.log('Mouse X coordinate: ' + x);
+        blob.animate(
+          {
+            left: x + "px",
+            top: y + "px",
+          },
+          { duration: 3000, fill: "forwards" }
+        );
+        // blob.style.left = x + 'px';
+        // blob.style.top = y + 'px';
+      });
+
+function sub() {
+  document.getElementById("options_list").submit();
+}
+function read_aloud() {
+  console.log(document.getElementById("story").value);
+  var msg = new SpeechSynthesisUtterance();
+  msg.text = document.getElementById("story").value;
+  window.speechSynthesis.speak(msg);
+  window.speechSynthesis.cancel();
+}
+function pause_reading() {
+  window.speechSynthesis.pause();
+}
+function resume_reading() {
+  window.speechSynthesis.resume();
+}
+function restart_reading() {
+  window.speechSynthesis.cancel();
+  console.log(document.getElementById("story").value);
+  var msg = new SpeechSynthesisUtterance();
+  msg.text = document.getElementById("story").value;
+  window.speechSynthesis.speak(msg);
+}
+    </script>
   </head>
   <body>
     <div id="blob"></div>
