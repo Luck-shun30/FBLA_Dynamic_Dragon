@@ -53,13 +53,14 @@ h1 {
 h4 {
   font-family: var(--font1);
   font-size: 2vw;
-  color: white;
+  color: var(--secondary);
   margin: 0;
 }
 
 h3 {
   font-family: var(--font1);
   font-size: 3vw;
+  /*     box-shadow: 0 0 20px var(--secondary); */
   background-image: linear-gradient(
     to right,
     var(--tertiary1),
@@ -78,7 +79,7 @@ h3 {
   0% {
     width: 0;
   }
-  10% {
+  15% {
     width: 31%;
   }
   80% {
@@ -336,4 +337,98 @@ nav li a {
   scale: 1.1;
   transform-origin: center;
   transition: 0.5s;
+}
+
+.storyOptions {
+  margin: 95px auto auto auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.storyButtons {
+  flex: 1.1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.genStory {
+  flex: 1;
+}
+
+h5 {
+  font-family: var(--font1);
+  font-weight: 400;
+  font-size: 3vw;
+  color: var(--tertiary1);
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: none;
+  font-family: var(--font2);
+  font-weight: 400;
+  color: var(--secondary);
+  font-size: 20px;
+}
+
+.blue {
+  background-color: var(--tertiary1);
+}
+
+.red {
+  background-color: var(--tertiary2);
+}
+
+.gray {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.txtA {
+  margin: auto;
+  display: flex;
+}
+
+.storyWindow {
+  width: 90%;
+}
+
+textarea {
+  resize: none;
+  background-color: rgba(197, 103, 125, 0.25);
+  padding: 25px;
+  border: none;
+  border-radius: 15px;
+  font-family: var(--font2);
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--secondary);
+}
+
+input {
+  display: none;
+}
+
+input + label {
+  cursor: pointer;
+  background-image: linear-gradient(45deg, #4896e4, #c5677d);
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--secondary);
+  font-family: var(--font2);
+}
+
+input:checked + label {
+  background-color: var(--primary);
+}
+
+#options_list {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2vw;
 }

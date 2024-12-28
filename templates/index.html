@@ -7,8 +7,8 @@
     <title>Dynamic Dragon - Home</title>
 
     <!-- The website stylesheet -->
-    <link rel="stylesheet" href="/static/styles/styles.css">
-    
+    <link rel="stylesheet" href="/static/styles/styles.css" />
+
     <!-- The website JavaScript file -->
   </head>
   <body>
@@ -37,8 +37,8 @@
             >AI Playground</a
           >
         </li>
-        <li><a href="">Technology</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="#bts">Technology</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <header>
@@ -47,7 +47,7 @@
         src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/dragon_bg.jpg?v=1734914216963"
       />
       <h3 class="cardTitle">Your Story, Your Plot.</h3>
-      <a href="/load" id="tryNow" class="tryNow">Try Now</a>
+      <a href="answer.html" id="tryNow" class="tryNow">Try Now</a>
     </header>
     <section class="aboutUs">
       <h1>About Us</h1>
@@ -105,7 +105,7 @@
       </div>
     </section>
     <hr />
-    <section class="bts">
+    <section id="bts" class="bts">
       <h1>Behind the Screen</h1>
       <div class="btsElems">
         <p>
@@ -145,7 +145,7 @@
       </div>
     </section>
     <hr />
-    <section class="contact">
+    <section id="contact" class="contact">
       <h1>Contact Us</h1>
       <div class="contactContainer">
         <div class="email">
@@ -239,5 +239,5 @@
       msg.text = document.getElementById("story").value;
       window.speechSynthesis.speak(msg);
     }
-</script>
+  </script>
 </html>
