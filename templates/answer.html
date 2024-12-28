@@ -1,83 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Dynamic Unicorn - Story Time</title>
     <link rel="stylesheet" href="/static/styles/styles.css" />
-</head>
-<script>
+  </head>
+  <script>
     function sub() {
-        document.getElementById("options_list").submit();
+      document.getElementById("options_list").submit();
     }
     function read_aloud() {
-        console.log(document.getElementById("story").value)
-        var msg = new SpeechSynthesisUtterance();
-        msg.text = document.getElementById("story").value;
-        window.speechSynthesis.speak(msg);
-        window.speechSynthesis.cancel();
+      console.log(document.getElementById("story").value);
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = document.getElementById("story").value;
+      window.speechSynthesis.speak(msg);
+      window.speechSynthesis.cancel();
     }
     function pause_reading() {
-        window.speechSynthesis.pause();
+      window.speechSynthesis.pause();
     }
     function resume_reading() {
-        window.speechSynthesis.resume();
+      window.speechSynthesis.resume();
     }
     function restart_reading() {
-        window.speechSynthesis.cancel();
-        console.log(document.getElementById("story").value)
-        var msg = new SpeechSynthesisUtterance();
-        msg.text = document.getElementById("story").value;
-        window.speechSynthesis.speak(msg);
+      window.speechSynthesis.cancel();
+      console.log(document.getElementById("story").value);
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = document.getElementById("story").value;
+      window.speechSynthesis.speak(msg);
     }
-</script>
-<body>
+  </script>
+  <body>
     <nav>
-        <div class="leftNav">
-          <div class="logoIMG">
-            <a href="/">
-              <img
-                src="https://cdn.glitch.global/13401054-3cb4-42ce-a2f4-c544422355d2/Coolify Logo.png?v=1734552065217"
-                alt="Dynamic Dragon Logo"
-                id="logo"
-              />
-            </a>
-          </div>
-          <h2 id="logoTxt">Dynamic Dragon</h2>
+      <div class="leftNav">
+        <div class="logoIMG">
+          <a href="/">
+            <img
+              src="https://cdn.glitch.global/13401054-3cb4-42ce-a2f4-c544422355d2/Coolify Logo.png?v=1734552065217"
+              alt="Dynamic Dragon Logo"
+              id="logo"
+            />
+          </a>
         </div>
-  
-        <ul>
-          <li><a class="active" href="answer.html">AI Playground</a></li>
-          <li><a href="">Technology</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
-      </nav>
-    <h1>Story</h1>
-    <textarea id="story" readonly>{{text}}</textarea>
-    <br>
-    <p>{{option_a}}</p>
-    <p>{{option_b}}</p>
-    <p>{{option_c}}</p>
-    
-    <form id="options_list" method="POST">
-        <input type="radio" name="options" id="option_a" value="{{option_a}}">
-        <label for="option_a">{{option_a}}</label>
-        <input type="radio" name="options" id="option_b" value="{{option_b}}">
-        <label for="option_b">{{option_b}}</label>
-        <input type="radio" name="options" id="option_c" value="{{option_c}}">
-        <label for="option_c">{{option_c}}</label>
+        <h2 id="logoTxt">Dynamic Dragon</h2>
+      </div>
 
-        <input type="submit" value="Generate" onclick="sub()">
-        <!-- <select name="options" id="options" onchange='sub()'>
-            <option selected disabled hidden value="None">Select</option>
-            <option value="{{option_a}}">A</option>
-            <option value="{{option_b}}">B</option>
-            <option value="{{option_c}}">C</option>
-            <option value="Exit">Exit</option>
-        </select> -->
-    </form>
-    <button onclick="read_aloud()">Read Aloud</button>
-    <button onclick="pause_reading()">Pause Reading</button>
-    <button onclick="resume_reading()">Resume Reading</button>
-    <button onclick="restart_reading()">Restart Reading</button>
-</body>
+      <ul>
+        <li>
+          <a
+            data-value="AI Playground"
+            class="active"
+            id="active"
+            href="/load"
+            >AI Playground</a
+          >
+        </li>
+        <li><a href="#bts">Technology</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <section class="storyWindow">
+      <div class="storyOptions">
+        <div class="genStory">
+          <h5>Your Generated Story</h5>
+        </div>
+        <div class="storyButtons">
+          <button onclick="read_aloud()" class="blue">Play Aloud</button>
+          <button onclick="pause_reading()" class="red">Pause</button>
+          <button onclick="resume_reading()" class="red">Resume</button>
+          <button onclick="restart_reading()" class="gray">
+            Restart Reading
+          </button>
+        </div>
+      </div>
+      <div class="txtA">
+        <textarea id="story" readonly rows="15" cols="105">{{text}}</textarea>
+      </div>
+      <h5 style="color: #c5677d">Your Options</h5>
+      <form id="options_list" method="POST">
+        <input type="radio" name="options" id="option_a" value="{{option_a}}" onchange="sub()" />
+        <label for="option_a"
+          >{{option_a}}</label
+        >
+        <input type="radio" name="options" id="option_b" value="{{option_b}}" onchange="sub()" />
+        <label for="option_b"
+          >{{option_b}}</label
+        >
+        <input type="radio" name="options" id="option_c" value="{{option_c}}" onchange="sub()" />
+        <label for="option_c"
+          >{{option_c}}</label
+        >
+      </form>
+    </section>
+  </body>
 </html>
