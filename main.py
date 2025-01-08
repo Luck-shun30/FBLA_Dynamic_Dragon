@@ -28,8 +28,9 @@ def llmgenerate():
    ])
 
    active_story += "\n" + response.message.content
+   #Conversation history (options and gen story) customize - filters for when what story
 
-   return active_story
+   return [active_story, response.message.content]
 
 def options_generate():
    OPTIONS_SYSTEM_PROMPT = "Return 3 short options to continue the story without adding anything else before or after the options. Do not end the story. Here's an example: 'A) Do this. B) Do that C) Do that'. Use third-person perspective and present tense. Be vague in the options."
@@ -45,7 +46,7 @@ def options_generate():
 
    options = options.message.content
 
-   option_a = options[0:options.find("B)")]
+   option_a = options[options.find("A)"):options.find("B)")]
    options = options.replace(option_a, '')
 
    option_b = options[0:options.find("C)")]
@@ -74,12 +75,10 @@ def generate():
     global choice
     if request.method == 'POST':
         choice = request.form.get('options')
-        if choice == "Exit":
-            return redirect(url_for('/'))  # Redirect to an / route
     story = llmgenerate()
     options = options_generate()
     return render_template('answer.html', 
-                           text=story, option_a=options[0], option_b=options[1], option_c=options[2])
+                           full_story = story[0], gen_story=story[1], option_a=options[0], option_b=options[1], option_c=options[2])
 
  
  

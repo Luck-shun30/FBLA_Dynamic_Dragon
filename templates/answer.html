@@ -3,11 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <title>Dynamic Dragon - Story Time</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/static/styles/styles.css" />
   </head>
   <script>
     function sub() {
       document.getElementById("options_list").submit();
+    }
+    function showStory() {
+      console.log("Pressed");
+      if (document.getElementById("full_story").style.display == "none") {
+        document.getElementById("full_story").style.display = "block";
+        document.getElementById("caretRight").style.display = "none";
+        document.getElementById("caretDown").style.display = "block";
+      }
+      else {
+        document.getElementById("full_story").style.display = "none";
+        document.getElementById("caretRight").style.display = "block";
+        document.getElementById("caretDown").style.display = "none";
+      }
     }
     function read_aloud() {
       console.log(document.getElementById("story").value);
@@ -73,10 +87,19 @@
           </button>
         </div>
       </div>
-      <div class="txtA">
-        <textarea id="story" readonly rows="15" cols="105">{{text}}</textarea>
+      <div class="toggleStory gray" onclick="showStory()">
+        <h4>Full Story</h4>
+        <i id="caretRight" class="fa-solid fa-caret-right fa-2x"></i>
+        <i id="caretDown" style="display: none;" class="fa-solid fa-caret-down fa-2x"></i>
       </div>
-      <h5 style="color: #c5677d">Your Options</h5>
+      <div id="full_story" style="display: none;" class="txtA">
+        <textarea style="background-color: rgba(72, 150, 228, 0.25);" readonly rows="15" cols="105">{{full_story}}</textarea>
+      </div>
+      <br>
+      <div class="txtA">
+        <textarea id="story" readonly rows="15" cols="105">{{gen_story}}</textarea>
+      </div>
+      <h5 style="color: var(--tertiary2);">Your Options</h5>
       <form id="options_list" method="POST">
         <input type="radio" name="options" id="option_a" value="{{option_a}}" onchange="sub()" />
         <label for="option_a"
