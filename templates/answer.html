@@ -3,26 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <title>Dynamic Dragon - Story Time</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/static/styles/styles.css" />
   </head>
   <script>
+    // Function to submit the options form
     function sub() {
       document.getElementById("options_list").submit();
     }
+
+    // Function to toggle the visibility of the full story section
     function showStory() {
       console.log("Pressed");
       if (document.getElementById("full_story").style.display == "none") {
         document.getElementById("full_story").style.display = "block";
         document.getElementById("caretRight").style.display = "none";
         document.getElementById("caretDown").style.display = "block";
-      }
-      else {
+      } else {
         document.getElementById("full_story").style.display = "none";
         document.getElementById("caretRight").style.display = "block";
         document.getElementById("caretDown").style.display = "none";
       }
     }
+
+    // Function to read the story aloud using speech synthesis
     function read_aloud() {
       console.log(document.getElementById("story").value);
       var msg = new SpeechSynthesisUtterance();
@@ -30,12 +40,18 @@
       window.speechSynthesis.speak(msg);
       window.speechSynthesis.cancel();
     }
+
+    // Function to pause speech synthesis
     function pause_reading() {
       window.speechSynthesis.pause();
     }
+
+    // Function to resume speech synthesis
     function resume_reading() {
       window.speechSynthesis.resume();
     }
+
+    // Function to restart speech synthesis from the beginning
     function restart_reading() {
       window.speechSynthesis.cancel();
       console.log(document.getElementById("story").value);
@@ -45,8 +61,10 @@
     }
   </script>
   <body>
+    <!-- Navigation bar section -->
     <nav>
       <div class="leftNav">
+        <!-- Logo section with clickable image linking to the homepage -->
         <div class="logoIMG">
           <a href="/">
             <img
@@ -56,16 +74,14 @@
             />
           </a>
         </div>
+        <!-- Logo text displayed next to the image -->
         <h2 id="logoTxt">Dynamic Dragon</h2>
       </div>
 
+      <!-- Navigation links -->
       <ul>
         <li>
-          <a
-            data-value="AI Playground"
-            class="active"
-            id="active"
-            href="/load"
+          <a data-value="AI Playground" class="active" id="active" href="/load"
             >AI Playground</a
           >
         </li>
@@ -73,11 +89,15 @@
         <li><a href="/">Contact</a></li>
       </ul>
     </nav>
+
+    <!-- Main story window section -->
     <section class="storyWindow">
+      <!-- Story options header section -->
       <div class="storyOptions">
         <div class="genStory">
           <h5>Your Generated Story</h5>
         </div>
+        <!-- Control buttons for speech synthesis functionality -->
         <div class="storyButtons">
           <button onclick="read_aloud()" class="blue">Play Aloud</button>
           <button onclick="pause_reading()" class="red">Pause</button>
@@ -87,32 +107,71 @@
           </button>
         </div>
       </div>
+
+      <!-- Toggle button to show or hide the full story -->
       <div class="toggleStory gray" onclick="showStory()">
         <h4>Full Story</h4>
         <i id="caretRight" class="fa-solid fa-caret-right fa-2x"></i>
-        <i id="caretDown" style="display: none;" class="fa-solid fa-caret-down fa-2x"></i>
+        <i
+          id="caretDown"
+          style="display: none"
+          class="fa-solid fa-caret-down fa-2x"
+        ></i>
       </div>
-      <div id="full_story" style="display: none;" class="txtA">
-        <textarea style="background-color: rgba(72, 150, 228, 0.25);" readonly rows="15" cols="105">{{full_story}}</textarea>
+
+      <!-- Full story section, initially hidden -->
+      <div id="full_story" style="display: none" class="txtA">
+        <textarea
+          style="background-color: rgba(72, 150, 228, 0.25)"
+          readonly
+          rows="15"
+          cols="105"
+        >
+          {{full_story}}</textarea
+        >
       </div>
-      <br>
+
+      <!-- Generated story textarea -->
+      <br />
       <div class="txtA">
-        <textarea id="story" readonly rows="15" cols="105">{{gen_story}}</textarea>
+        <textarea id="story" readonly rows="15" cols="105">
+          {{gen_story}}
+        </textarea
+        >
       </div>
-      <h5 style="color: var(--tertiary2);">Your Options</h5>
+
+      <!-- Options form section -->
+      <h5 style="color: var(--tertiary2)">Your Options</h5>
       <form id="options_list" method="POST">
-        <input type="radio" name="options" id="option_a" value="{{option_a}}" onchange="sub()" />
-        <label for="option_a"
-          >{{option_a}}</label
-        >
-        <input type="radio" name="options" id="option_b" value="{{option_b}}" onchange="sub()" />
-        <label for="option_b"
-          >{{option_b}}</label
-        >
-        <input type="radio" name="options" id="option_c" value="{{option_c}}" onchange="sub()" />
-        <label for="option_c"
-          >{{option_c}}</label
-        >
+        <!-- Radio button for option A -->
+        <input
+          type="radio"
+          name="options"
+          id="option_a"
+          value="{{option_a}}"
+          onchange="sub()"
+        />
+        <label for="option_a">{{option_a}}</label>
+
+        <!-- Radio button for option B -->
+        <input
+          type="radio"
+          name="options"
+          id="option_b"
+          value="{{option_b}}"
+          onchange="sub()"
+        />
+        <label for="option_b">{{option_b}}</label>
+
+        <!-- Radio button for option C -->
+        <input
+          type="radio"
+          name="options"
+          id="option_c"
+          value="{{option_c}}"
+          onchange="sub()"
+        />
+        <label for="option_c">{{option_c}}</label>
       </form>
     </section>
   </body>
