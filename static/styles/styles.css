@@ -2,63 +2,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-  --primary: #222222;
-  --secondary: #ffffff;
-  --tertiary1: #4896e4;
-  --tertiary2: #c5677d;
-  --font1: "Chakra Petch", sans-serif;
-  --font2: "Space Mono", serif;
+  /* Defining color and font variables for consistent styling */
+  --primary: #222222; /* Main background color */
+  --secondary: #ffffff; /* Main text color */
+  --tertiary1: #4896e4; /* Gradient color 1 */
+  --tertiary2: #c5677d; /* Gradient color 2 */
+  --font1: "Chakra Petch", sans-serif; /* Primary font */
+  --font2: "Space Mono", serif; /* Secondary font */
 }
 
 html {
+  /* Setting base styles for the entire document */
   background-color: var(--primary);
-  max-width: 100%;
+  max-width: 100%; /* Prevent horizontal scrolling */
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
 section {
   width: 90%;
-  margin: 40px auto;
+  margin: 40px auto; /* Center sections with margin */
 }
 
 header {
+  /* Styling for the header section */
   height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   margin-top: 85px;
-  z-index: -1;
+  z-index: -1; /* Push header behind other elements */
   align-items: center;
 }
 
 hr {
-  margin: 50px;
+  margin: 50px; /* Space around horizontal rules */
 }
 
 .bgImg {
+  /* Background image styling */
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.2;
+  object-fit: cover; /* Ensure image covers entire area */
+  opacity: 0.2; /* Make the image semi-transparent */
 }
 
 h1 {
+  /* Main heading styling */
   font-family: var(--font1);
   font-size: 3vw;
   color: var(--secondary);
 }
 
 h4 {
+  /* Subheading styling */
   font-family: var(--font1);
   font-size: 2vw;
   color: var(--secondary);
-  margin: 0;
+  margin: 0; /* Remove default margin */
 }
 
 h3 {
+  /* Typing effect heading styling */
   font-family: var(--font1);
   font-size: 3vw;
   /*     box-shadow: 0 0 20px var(--secondary); */
@@ -68,15 +75,16 @@ h3 {
     var(--tertiary2)
   );
   color: transparent;
-  background-clip: text;
+  background-clip: text; /* Clip text to gradient background */
   z-index: 1;
 
   animation: typing 7s steps(22) infinite, blinking 0.75s infinite alternate;
-  white-space: nowrap;
-  border-right: 3px solid white;
+  white-space: nowrap; /* Prevent text from wrapping */
+  border-right: 3px solid white; /* Cursor effect for typing animation */
 }
 
 @keyframes typing {
+  /* Defining the typing animation */
   0% {
     width: 0;
   }
@@ -95,35 +103,38 @@ h3 {
 }
 
 @keyframes blinking {
+  /* Blinking cursor animation */
   50% {
     border-color: transparent;
   }
 }
 
 @keyframes rotate {
+  /* Rotation animation for the blob element */
   from {
     rotate: 0deg;
   }
-
   to {
     rotate: 360deg;
   }
 }
 
 #blob {
+  /* Styling for the rotating blob effect */
   background-color: white;
   height: 500px;
   width: 200px;
   position: absolute;
   left: 50%;
   top: 50%;
-  translate: -50% -50%;
-  border-radius: 50%;
-  animation: rotate 20s infinite;
-  filter: blur(300px);
+  translate: -50% -50%; /* Center the blob */
+  border-radius: 50%; /* Make the blob circular */
+  animation: rotate 20s infinite; /* Apply infinite rotation */
+  filter: blur(300px); /* Apply a blur effect */
 }
 
 .tryNow {
+  /* Button styling */
   z-index: 1;
   text-decoration: none;
   font-family: var(--font1), serif;
@@ -134,7 +145,6 @@ h3 {
     var(--tertiary1),
     var(--tertiary2)
   );
-  /*   opacity: 0.8; */
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 100px;
@@ -142,13 +152,14 @@ h3 {
 
 .tryNow:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  transform: scale(1.2); /* Enlarge on hover */
   background-color: transparent;
   text-decoration: underline;
-  transition: 0.2s;
+  transition: 0.2s; /* Smooth hover transition */
 }
 
 .abtUsContainer {
+  /* Layout for the About Us section */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -160,11 +171,11 @@ h3 {
 }
 .aboutUsImg img {
   width: 100%;
-  border-radius: 200vw;
-  /*   box-shadow: 0px 0px 10px var(--secondary); */
+  border-radius: 200vw; /* Circular image */
 }
 
 p {
+  /* Paragraph styling */
   font-family: var(--font2);
   font-size: 1.5vw;
   color: var(--secondary);
@@ -172,6 +183,7 @@ p {
 }
 
 .teamMembers {
+  /* Team member profile layout */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -184,7 +196,7 @@ p {
 
 .profiles img {
   width: 20vw;
-  aspect-ratio: 1;
+  aspect-ratio: 1; /* Maintain a square aspect ratio */
   object-fit: cover;
   margin: auto;
   border-radius: 20vw;
@@ -199,11 +211,13 @@ p:not(.btsElems p) {
 }
 
 .btsElems {
+  /* Layout for behind-the-scenes elements */
   display: flex;
   justify-content: space-between;
 }
 
 .logoGrid {
+  /* Grid layout for logos */
   margin: 20px;
   display: grid;
   gap: 40px;
@@ -239,6 +253,7 @@ p:not(.btsElems p) {
 }
 
 .contactContainer {
+  /* Contact information layout */
   display: grid;
   gap: 40px;
   grid-template-areas:
@@ -263,6 +278,7 @@ p:not(.btsElems p) {
 }
 
 iframe {
+  /* Styling for embedded maps or content */
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -270,14 +286,15 @@ iframe {
 }
 
 nav {
+  /* Navigation bar styling */
   display: flex;
   align-items: center;
   justify-content: space-between;
   top: 0;
   left: 0;
   position: fixed;
-  background-color: rgb(255 255 255 / 5%);
-  backdrop-filter: blur(10px);
+  background-color: rgb(255 255 255 / 5%); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect behind nav */
   border-radius: 0px 0px 50px 50px;
   width: 100%;
   height: 80px;
@@ -293,6 +310,7 @@ nav {
 }
 
 h2 {
+  /* Secondary heading styling */
   font-family: var(--font1);
   font-weight: 400;
   font-size: 37px;
@@ -311,6 +329,7 @@ h2 {
 }
 
 nav ul {
+  /* Unordered list styling for navigation */
   list-style-type: none;
   display: flex;
   justify-content: center;
@@ -352,11 +371,12 @@ nav li a {
 }
 
 .storyOptions {
-  /* margin: 95px auto auto auto; */
+  /* Layout for story options */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .storyButtons {
   flex: 1.1;
   display: flex;
@@ -366,6 +386,7 @@ nav li a {
 
 .genStory {
   flex: 1;
+  margin-top: 40px;
 }
 
 h5 {
@@ -419,21 +440,25 @@ textarea {
 }
 
 input {
-  display: none;
+  display: none; /* Hide the input elements to style their associated labels */
 }
 
 input + label {
-  cursor: pointer;
+  /* Styling for labels associated with hidden input elements */
+  cursor: pointer; /* Change the cursor to a pointer when hovering over the label */
   background-image: linear-gradient(45deg, #4896e4, #c5677d);
   background-color: rgba(0, 0, 0, 0.6);
-  background-blend-mode: multiply;
-  padding: 20px;
-  border-radius: 10px;
-  color: var(--secondary);
-  font-family: var(--font2);
+  background-blend-mode: multiply; /* Blend the background color and image for a layered effect */
+  padding: 20px; /* Add space inside the label */
+  border-radius: 10px; /* Round the label's corners */
+  color: var(--secondary); /* Set text color */
+  font-family: var(--font2); /* Use the secondary font */
+  display: flex;
+  align-items: center;
 }
 
 input:checked + label {
+  /* Change the label styling when the input is checked */
   background-color: var(--primary);
 }
 
@@ -458,11 +483,13 @@ input:checked + label {
   justify-content: space-between;
 }
 
-input, button {
+input,
+button {
   cursor: pointer;
 }
 
-input:hover, button:hover {
+input:hover,
+button:hover {
   transform: scale(1.1);
   transition: 0.2s;
 }

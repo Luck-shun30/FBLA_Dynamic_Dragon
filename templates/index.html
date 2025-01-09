@@ -3,14 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
-    <title>Dynamic Dragon - Home</title>
     <link rel="stylesheet" href="/static/styles/styles.css" />
+    <title>Dynamic Dragon - Home</title>
   </head>
   <body>
+    <!-- Animated blob element for visual effect -->
     <div id="blob"></div>
+
+    <!-- Navigation bar section -->
     <nav>
       <div class="leftNav">
+        <!-- Logo section with image and text -->
         <div class="logoIMG">
           <a href="/">
             <img
@@ -23,13 +26,10 @@
         <h2 id="logoTxt">Dynamic Dragon</h2>
       </div>
 
+      <!-- Navigation links -->
       <ul>
         <li>
-          <a
-            data-value="AI Playground"
-            class="active"
-            id="active"
-            href="/load"
+          <a data-value="AI Playground" class="active" id="active" href="/load"
             >AI Playground</a
           >
         </li>
@@ -37,6 +37,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
+    <!-- Header section with background image and call-to-action button -->
     <header>
       <img
         class="bgImg"
@@ -45,66 +47,84 @@
       <h3 class="cardTitle">Your Story, Your Plot.</h3>
       <a href="/load" id="tryNow" class="tryNow">Try Now</a>
     </header>
+
+    <!-- About Us section -->
     <section class="aboutUs">
       <h1>About Us</h1>
       <div class="abtUsContainer">
+        <!-- Image representing About Us content -->
         <div class="aboutUsImg">
           <img
             src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/aboutUs.png?v=1734988018778"
           />
         </div>
+        <!-- Text describing the project's purpose and vision -->
         <div class="aboutUsText">
           <p>
-            Our AI Story Generator project reimagines storytelling by blending creativity and technology.
-            This platform invites users to immerse themselves in dynamic, ever-changing narratives, making each
-            reading experience unique. By fostering interaction and engagement, it transforms traditional reading
-            into a participatory adventure. With a focus on accessibility and personalization, our project aims to
-            inspire a love for stories while offering a fresh, modern twist on the classic art of storytelling.
+            Our AI Story Generator project reimagines storytelling by blending
+            creativity and technology. This platform invites users to immerse
+            themselves in dynamic, ever-changing narratives, making each reading
+            experience unique. By fostering interaction and engagement, it
+            transforms traditional reading into a participatory adventure. With
+            a focus on accessibility and personalization, our project aims to
+            inspire a love for stories while offering a fresh, modern twist on
+            the classic art of storytelling.
           </p>
         </div>
       </div>
     </section>
     <hr />
+    <!-- The Team section highlighting team members and their roles -->
     <section class="theTeam">
       <h1>The Team</h1>
       <div class="teamMembers">
+        <!-- Team member profile: Lakshan -->
         <div class="lakshan profiles">
           <img
             src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/lakshan.jpg?v=1734989763281"
             class="profilePic"
           />
           <p class="aboutMe">
-            As the Python lead and Flask integration specialist, Lakshan ensures the smooth operation of
-            our platform's backend. With a strong focus on functionality and performance, he integrates complex
-            systems seamlessly. As a co-designer, Lakshan also contributes to the platform's aesthetic and
-            user experience, collaborating closely to create an engaging and cohesive storytelling environment.
+            As the Python lead and Flask integration specialist, Lakshan ensures
+            the smooth operation of our platform's backend. With a strong focus
+            on functionality and performance, he integrates complex systems
+            seamlessly. As a co-designer, Lakshan also contributes to the
+            platform's aesthetic and user experience, collaborating closely to
+            create an engaging and cohesive storytelling environment.
           </p>
         </div>
+        <!-- Team member profile: Shankar -->
         <div class="shankar profiles">
           <img
             src="https://cdn.glitch.global/bafb6709-47ea-4c79-a32f-5aeb526c858e/IMG_6983_Original.jpg?v=1736304815073"
             class="profilePic"
           />
           <p class="aboutMe">
-            Shankar is the creative mind behind the design and front-end development of our platform.
-            As the designer and HTML/CSS coder, Shankar ensures that the website is visually appealing and
-            user-friendly. His passion for design bring the interactive storytelling experience to life,
-            making it accessible and engaging for all users.
+            Shankar is the creative mind behind the design and front-end
+            development of our platform. As the designer and HTML/CSS coder,
+            Shankar ensures that the website is visually appealing and
+            user-friendly. His passion for design bring the interactive
+            storytelling experience to life, making it accessible and engaging
+            for all users.
           </p>
         </div>
       </div>
     </section>
     <hr />
+    <!-- Behind the Screen section explaining the technology stack -->
     <section id="bts" class="bts">
       <h1>Behind the Screen</h1>
       <div class="btsElems">
         <p>
-          Our project combines Python, Flask, HTML, CSS, and JavaScript to create a robust, interactive platform.
-          At its core, the Ollama open-source LLM generates unique stories with each interaction. We meticulously
-          integrated these technologies to ensure a smooth, engaging user experience. Our development process was
-          a collaborative effort, balancing backend functionality with front-end design to bring our dynamic
-          storytelling vision to reality.
+          Our project combines Python, Flask, HTML, CSS, and JavaScript to
+          create a robust, interactive platform. At its core, the Ollama
+          open-source LLM generates unique stories with each interaction. We
+          meticulously integrated these technologies to ensure a smooth,
+          engaging user experience. Our development process was a collaborative
+          effort, balancing backend functionality with front-end design to bring
+          our dynamic storytelling vision to reality.
         </p>
+        <!-- Logos representing technologies used -->
         <div class="logoGrid">
           <div class="logo">
             <img
@@ -134,6 +154,7 @@
       </div>
     </section>
     <hr />
+    <!-- Contact Us section with contact details -->
     <section id="contact" class="contact">
       <h1>Contact Us</h1>
       <div class="contactContainer">
@@ -152,6 +173,7 @@
           <p>1 Stevenson Dr<br />Lincolnshire, IL 60069<br />United States</p>
         </div>
         <div class="map">
+          <!-- Google Maps embedded frame for location -->
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2955.7136426583133!2d-87.9461949!3d42.1991899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fbdc258de4753%3A0x8d1b4f6510025528!2sStevenson%20High%20School!5e0!3m2!1sen!2sus!4v1736017623111!5m2!1sen!2sus"
           ></iframe>
@@ -160,6 +182,7 @@
     </section>
   </body>
   <script>
+    // Function to create a scrambling text effect on the navigation link
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     let interval = null;
@@ -189,6 +212,7 @@
       }, 1);
     };
 
+    // Blob animation effect that follows mouse movements
     const blob = document.getElementById("blob");
 
     document.addEventListener("mousemove", function (event) {
@@ -205,6 +229,8 @@
       // blob.style.left = x + 'px';
       // blob.style.top = y + 'px';
     });
+
+    // Functions for text-to-speech controls
     function sub() {
       document.getElementById("options_list").submit();
     }
