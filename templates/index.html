@@ -229,30 +229,5 @@
       // blob.style.left = x + 'px';
       // blob.style.top = y + 'px';
     });
-
-    // Functions for text-to-speech controls
-    function sub() {
-      document.getElementById("options_list").submit();
-    }
-    function read_aloud() {
-      console.log(document.getElementById("story").value);
-      var msg = new SpeechSynthesisUtterance();
-      msg.text = document.getElementById("story").value;
-      window.speechSynthesis.speak(msg);
-      window.speechSynthesis.cancel();
-    }
-    function pause_reading() {
-      window.speechSynthesis.pause();
-    }
-    function resume_reading() {
-      window.speechSynthesis.resume();
-    }
-    function restart_reading() {
-      window.speechSynthesis.cancel();
-      console.log(document.getElementById("story").value);
-      var msg = new SpeechSynthesisUtterance();
-      msg.text = document.getElementById("story").value;
-      window.speechSynthesis.speak(msg);
-    }
   </script>
 </html>

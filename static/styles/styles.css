@@ -457,7 +457,12 @@ input + label {
   align-items: center;
 }
 
-input:checked + label {
+label a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+input:hover + label {
   /* Change the label styling when the input is checked */
   background-color: var(--primary);
 }
@@ -509,6 +514,10 @@ button:hover {
   border-color: white transparent white transparent;
   border-radius: 50%;
   animation: spin 1.3s linear infinite;
+}
+
+.exit_story {
+  margin: auto;
 }
 
 @keyframes spin {

@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, redirect, url_for
 from ollama import chat
 from ollama import ChatResponse
 
-#options aren't shown in the ai request so resulting story is random. add global var for the options available and add that to prompt.
 active_story = ""
 choice = ""
 options = []
@@ -28,7 +27,6 @@ def llmgenerate():
    ])
 
    active_story += "\n" + response.message.content
-   #Conversation history (options and gen story) customize - filters for when what story
 
    return [active_story, response.message.content]
 
@@ -49,7 +47,7 @@ def options_generate():
    option_a = options[options.find("A)"):options.find("B)")]
    options = options.replace(option_a, '')
 
-   option_b = options[0:options.find("C)")]
+   option_b = options[options.find("B)"):options.find("C)")]
    options = options.replace(option_b, '')
 
    option_c = options
@@ -79,6 +77,10 @@ def generate():
     options = options_generate()
     return render_template('answer.html', 
                            full_story = story[0], gen_story=story[1], option_a=options[0], option_b=options[1], option_c=options[2])
+
+@app.route('/exit')
+def exit():
+   return render_template('./exit.html', full_story=active_story)
 
  
  

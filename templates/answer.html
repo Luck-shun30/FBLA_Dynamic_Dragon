@@ -13,14 +13,21 @@
     <link rel="stylesheet" href="/static/styles/styles.css" />
   </head>
   <script>
-    // Function to submit the options form
+    // Function to submit the options form and show the loading screen
     function sub() {
       document.getElementById("options_list").submit();
+      document.getElementById("navbar").style.display = "none";
+      document.getElementById("storyWindow").style.display = "none";
+      document.getElementById("loaderContainer").style.display = "flex";
+    }
+
+    // Hides the loading screen once the page loads again
+    function hideLoading() {
+      document.getElementById("loaderContainer").style.display = "none";
     }
 
     // Function to toggle the visibility of the full story section
     function showStory() {
-      console.log("Pressed");
       if (document.getElementById("full_story").style.display == "none") {
         document.getElementById("full_story").style.display = "block";
         document.getElementById("caretRight").style.display = "none";
@@ -60,9 +67,9 @@
       window.speechSynthesis.speak(msg);
     }
   </script>
-  <body>
+  <body onload="hideLoading()">
     <!-- Navigation bar section -->
-    <nav>
+    <nav id="navbar">
       <div class="leftNav">
         <!-- Logo section with clickable image linking to the homepage -->
         <div class="logoIMG">
@@ -91,7 +98,7 @@
     </nav>
 
     <!-- Main story window section -->
-    <section class="storyWindow">
+    <section class="storyWindow" id="storyWindow">
       <!-- Story options header section -->
       <div class="storyOptions">
         <div class="genStory">
@@ -172,7 +179,18 @@
           onchange="sub()"
         />
         <label for="option_c">{{option_c}}</label>
+
+        <!-- Radio button to Stop -->
+        <input
+          type="radio"
+          name="options"
+        />
+        <label><a href="/exit">Stop</a></label>
       </form>
     </section>
+    <div class="loaderContainer" id="loaderContainer">
+      <div class="spinner"></div>
+      <h1 class="redirectText">Creating Your Personalized Story...</h1>
+    </div>
   </body>
 </html>
