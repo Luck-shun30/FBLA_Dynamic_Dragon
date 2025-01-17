@@ -82,6 +82,10 @@ def generate():
 def exit():
    return render_template('./exit.html', full_story=active_story)
 
+@app.route('/faq')
+def faq():
+   return render_template("./faq.html")
+
  
  
 # Start with flask web app with debug as

@@ -525,3 +525,9 @@ button:hover {
     transform: rotate(360deg);
   }
 }
+
+.faqDiv {
+  margin-top: 85px;
+  width: 85%; 
+  margin: 100px auto auto auto;
+}
