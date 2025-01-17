@@ -11,7 +11,7 @@ option_b = ""
 option_c = ""
 
 def llmgenerate():
-   SYSTEM_PROMPT = 'Continue the fantasy story without adding anything else. Do not end the story.'
+   SYSTEM_PROMPT = 'Continue the story without adding anything else. Do not end the story.'
    global choice
    global active_story
    global options
