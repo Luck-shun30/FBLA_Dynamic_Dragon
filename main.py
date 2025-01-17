@@ -50,7 +50,7 @@ def options_generate():
    option_b = options[options.find("B)"):options.find("C)")]
    options = options.replace(option_b, '')
 
-   option_c = options
+   option_c = options[options.find("C"):len(options)]
 
    options = [option_a, option_b, option_c]
    
