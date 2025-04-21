@@ -1,13 +1,13 @@
-# Dynamic Dragon - An Interactive AI Story Generator
+# 🐉 Dynamic Dragon - An Interactive AI Story Generator
 
 ---
 
-## **Project Overview**
+## 📝 Project Overview
 This project is an interactive website where users can generate stories by making decisions on how they would like the story to go at key points in the narrative. The story evolves dynamically using a free, open-source Large Language Model (LLM) from Ollama.
 
 ---
 
-## **Features**
+## ✨ Features
 - **Dynamic Story Generation:** The story evolves based on user input at key decision points using an advanced LLM.
 - **Multiple-Choice Input:** Users make choices that guide the story's direction.
 - **Accessibility Feature:** Offer text-to-speech features for the story for those who need it.
@@ -15,36 +15,36 @@ This project is an interactive website where users can generate stories by makin
 
 ---
 
-## **Technology Stack**
-### **Backend:**
+## 💻 Technology Stack
+### ⚙️ Backend:
 - Python: For handling story logic and integrating the LLM.
 - Flask: For hosting the webapp.
 
-### **Frontend:**
+### 🎨 Frontend:
 - HTML/CSS/JavaScript to build the user interface.
 
 ---
 
-## **Installation and Setup**
+## 🔧 Installation and Setup
 
-### **Prerequisites:**
+### ✅ Prerequisites:
 - Python 3.8 or above.
 - [Ollama app installed from the internet](https://ollama.com/download)
 
-#### **Clone the repository:**
+### 📂 Clone the repository:
 
 ```sh
 git clone https://github.com/TechNerd2009/FBLA_Dynamic_Dragon.git
 cd dynamic_dragon
 ```
 
-**Install dependencies:**
+### 📦 Install dependencies:
 
 ```sh
 pip install -r requirements.txt
 ```
 
-**Run the backend server:**
+### 📡 Run the backend server:
 
 ```sh
 flask --app main run
@@ -52,9 +52,9 @@ flask --app main run
 
 ---
 
-## **How It Works**
+## 🛠️ How It Works
 
-### **User Interaction:**
+### 🖱️ User Interaction:
 
 - Users begin the story by clicking on the AI Playground button to start generating.
 
@@ -62,13 +62,13 @@ flask --app main run
 
 - User input is sent to the backend for the AI to process.
 
-### **Backend Processing:**
+### 🧠 Backend Processing:
 
 - The backend appends the user’s choice to the story context.
 
 - The updated context is sent to the LLM, which generates the next part of the story along with new options.
 
-### **Frontend Display:**
+### 🖥️ Frontend Display:
 
 - The generated text is returned to the frontend and displayed to the user.
 
@@ -76,17 +76,17 @@ flask --app main run
 
 ---
 
-## **License**
+## 📜 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
 
-## **Acknowledgments**
+## 🙏 Acknowledgments
 
 - Ollama for providing access to an open-source LLM.
 - [BadgerCMYK](https://www.deviantart.com/badgercmyk/art/Fairytale-Dragon-in-the-Ocean-1057585987) for artwork
 
 ---
 
-Thank you for exploring Dynamic Dragon! We hope you enjoy creating unique and dynamic stories.
+**💫 Thank you for exploring Dynamic Dragon! We hope you enjoy creating unique and dynamic stories.**
